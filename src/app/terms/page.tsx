@@ -18,14 +18,14 @@ export default function TermsPage() {
 
   return (
     <div className="py-12 md:py-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
         {/* Header */}
         <ScrollReveal direction="up">
           <div className="space-y-3 text-center sm:text-left">
             <div className="text-xs font-bold text-foreground-secondary uppercase tracking-wider">
               Legalitas & Tata Tertib
             </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-foreground tracking-tight">
               Syarat & Ketentuan Layanan
             </h1>
             <p className="text-xs sm:text-sm text-foreground-muted">
@@ -34,24 +34,26 @@ export default function TermsPage() {
           </div>
         </ScrollReveal>
 
-        {/* Disclaimer Callout */}
+        {/* Black Disclaimer Callout */}
         <ScrollReveal direction="up" delay={100}>
-          <div className="p-5 sm:p-6 rounded-3xl bg-amber-50 border border-amber-200 text-amber-900 space-y-2.5">
-            <div className="flex items-center gap-2 font-bold text-sm">
-              <AlertCircle className="w-4 h-4 text-amber-700 flex-shrink-0" aria-hidden="true" />
-              <span>Penting: Disclaimer Evaluasi Risiko Otomatis</span>
+          <div className="p-5 sm:p-6 rounded-3xl bg-foreground text-white border border-foreground space-y-2.5 shadow-md">
+            <div className="flex items-start sm:items-center gap-2.5">
+              <AlertCircle className="w-5 h-5 text-white flex-shrink-0 mt-0.5 sm:mt-0" aria-hidden="true" />
+              <h2 className="font-bold text-sm sm:text-base text-white leading-snug">
+                Penting: Disclaimer Evaluasi Risiko Otomatis
+              </h2>
             </div>
-            <p className="text-xs sm:text-sm leading-relaxed text-amber-900/90">
+            <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
               AntiScam adalah alat bantu edukasi berbasis deteksi pola. Hasil analisis skor risiko, indikator, dan rekomendasi bukan merupakan nasihat hukum, audit forensik resmi, atau jaminan mutlak bahwa sebuah pesan 100% aman atau 100% scam. Selalu gunakan pertimbangan akal sehat dan verifikasi mandiri ke kontak resmi institusi terkait.
             </p>
           </div>
         </ScrollReveal>
 
         {/* Terms Sections */}
-        <div className="space-y-8 text-foreground-secondary leading-relaxed text-sm sm:text-base">
+        <div className="space-y-6 sm:space-y-8 text-foreground-secondary leading-relaxed text-sm sm:text-base">
           <ScrollReveal direction="up" delay={150}>
-            <section className="bg-white border border-border rounded-3xl p-6 sm:p-8 space-y-3 shadow-xs">
-              <h2 className="text-lg sm:text-xl font-bold text-foreground">
+            <section className="bg-white border border-border rounded-3xl p-5 sm:p-8 space-y-3 shadow-xs">
+              <h2 className="text-base sm:text-xl font-bold text-foreground">
                 1. Penerimaan Ketentuan
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed">
@@ -61,8 +63,8 @@ export default function TermsPage() {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={200}>
-            <section className="bg-white border border-border rounded-3xl p-6 sm:p-8 space-y-4 shadow-xs">
-              <h2 className="text-lg sm:text-xl font-bold text-foreground">
+            <section className="bg-white border border-border rounded-3xl p-5 sm:p-8 space-y-4 shadow-xs">
+              <h2 className="text-base sm:text-xl font-bold text-foreground">
                 2. Penggunaan yang Diizinkan
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed">
@@ -87,8 +89,8 @@ export default function TermsPage() {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={250}>
-            <section className="bg-white border border-border rounded-3xl p-6 sm:p-8 space-y-3 shadow-xs">
-              <h2 className="text-lg sm:text-xl font-bold text-foreground">
+            <section className="bg-white border border-border rounded-3xl p-5 sm:p-8 space-y-3 shadow-xs">
+              <h2 className="text-base sm:text-xl font-bold text-foreground">
                 3. Batasan Tanggung Jawab
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed">
@@ -98,8 +100,8 @@ export default function TermsPage() {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={300}>
-            <section className="bg-white border border-border rounded-3xl p-6 sm:p-8 space-y-3 shadow-xs">
-              <h2 className="text-lg sm:text-xl font-bold text-foreground">
+            <section className="bg-white border border-border rounded-3xl p-5 sm:p-8 space-y-3 shadow-xs">
+              <h2 className="text-base sm:text-xl font-bold text-foreground">
                 4. Ketersediaan Layanan
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed">

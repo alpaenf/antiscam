@@ -38,7 +38,7 @@ export function ExampleAnalysis() {
 
                 <div className="bg-white border border-border rounded-2xl p-5 font-mono text-xs sm:text-sm text-foreground leading-relaxed shadow-xs">
                   <p className="text-gray-800">
-                    &ldquo;Selamat! Nomor Anda terpilih memenangkan dana tunai <span className="font-bold bg-amber-100 px-1 py-0.5 rounded">Rp 10.000.000</span> dari Program Kejutan Berkah. Klik tautan berikut untuk klaim sebelum batas waktu berakhir: <span className="font-bold underline text-blue-600">https://klaim-dana-berkah.xyz/id-982</span>&rdquo;
+                    &ldquo;Selamat! Nomor Anda terpilih memenangkan dana tunai <span className="font-bold bg-background-muted px-1.5 py-0.5 rounded text-foreground">Rp 10.000.000</span> dari Program Kejutan Berkah. Klik tautan berikut untuk klaim sebelum batas waktu berakhir: <span className="font-bold underline text-blue-600">https://klaim-dana-berkah.xyz/id-982</span>&rdquo;
                   </p>
                 </div>
               </div>
