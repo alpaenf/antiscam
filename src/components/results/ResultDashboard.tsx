@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SingleAnalysisResponse } from '@/types/analysis';
 import { WhatsAppAnalysisResponse } from '@/types/whatsapp';
 import { RiskScoreMeter } from './RiskScoreMeter';
@@ -27,8 +27,13 @@ export function ResultDashboard({ data, onReset, isWhatsApp = false }: ResultDas
     ? (data as WhatsAppAnalysisResponse).overallRiskScore
     : (data as SingleAnalysisResponse).riskScore;
 
+  useEffect(() => {
+    // Scroll window smoothly to the top of the result report
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [data.id]);
+
   return (
-    <div id="antiscam-result-dashboard" className="space-y-8 animate-in fade-in duration-300">
+    <div id="antiscam-result-dashboard" className="space-y-8 animate-in fade-in duration-300 min-h-[600px]">
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
         <div>

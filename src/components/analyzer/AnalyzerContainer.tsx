@@ -45,6 +45,12 @@ export function AnalyzerContainer() {
   const isSingleLoading = singleStatus === 'loading';
   const isWaLoading = waStatus === 'loading';
 
+  useEffect(() => {
+    if (isSingleLoading || isWaLoading) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [isSingleLoading, isWaLoading]);
+
   // If single message analysis is completed
   if (singleResult) {
     return (
@@ -68,7 +74,7 @@ export function AnalyzerContainer() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 min-h-[600px]">
       {/* Header Title */}
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
@@ -84,7 +90,7 @@ export function AnalyzerContainer() {
 
       {/* Main Mode View */}
       {isSingleLoading || isWaLoading ? (
-        <div className="bg-white border border-border rounded-3xl p-12 shadow-sm">
+        <div className="bg-white border border-border rounded-3xl p-12 sm:p-20 shadow-sm min-h-[450px] flex items-center justify-center">
           <LoadingSpinner
             size="lg"
             label={isWaLoading ? 'Menganalisis Alur Chat WhatsApp...' : 'Menganalisis Pesan...'}
