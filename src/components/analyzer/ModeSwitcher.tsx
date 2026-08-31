@@ -13,18 +13,18 @@ export interface ModeSwitcherProps {
 
 export function ModeSwitcher({ activeMode, onChange }: ModeSwitcherProps) {
   return (
-    <div className="flex bg-background-muted p-1 rounded-2xl max-w-md mx-auto mb-8 border border-border/80">
+    <div className="flex bg-background-muted p-1 rounded-2xl max-w-md mx-auto mb-6 sm:mb-8 border border-border/80 shadow-xs">
       <button
         type="button"
         onClick={() => onChange('single')}
         className={cn(
-          'flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900',
+          'flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2.5 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 whitespace-nowrap',
           activeMode === 'single'
-            ? 'bg-white text-foreground font-semibold shadow-sm border border-border/60'
+            ? 'bg-white text-foreground shadow-sm border border-border/60'
             : 'text-foreground-secondary hover:text-foreground'
         )}
       >
-        <MessageSquare className="w-4 h-4" aria-hidden="true" />
+        <MessageSquare className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
         <span>Pesan Tunggal</span>
       </button>
 
@@ -32,15 +32,15 @@ export function ModeSwitcher({ activeMode, onChange }: ModeSwitcherProps) {
         type="button"
         onClick={() => onChange('whatsapp')}
         className={cn(
-          'flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900',
+          'flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2.5 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 whitespace-nowrap',
           activeMode === 'whatsapp'
-            ? 'bg-white text-foreground font-semibold shadow-sm border border-border/60'
+            ? 'bg-white text-foreground shadow-sm border border-border/60'
             : 'text-foreground-secondary hover:text-foreground'
         )}
       >
-        <WhatsAppIcon colored size={18} />
-        <span className="flex items-center gap-1.5 font-medium">
-          Ekspor Chat WhatsApp
+        <WhatsAppIcon colored size={16} />
+        <span>
+          Ekspor Chat <span className="hidden sm:inline">WhatsApp</span><span className="sm:hidden">WA</span>
         </span>
       </button>
     </div>

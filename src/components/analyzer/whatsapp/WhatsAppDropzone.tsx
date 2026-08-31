@@ -47,33 +47,35 @@ export function WhatsAppDropzone() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5 sm:space-y-6">
       {/* Tab Selector inside WhatsApp module */}
-      <div className="flex items-center justify-between">
-        <div className="flex bg-background-muted p-1 rounded-xl border border-border">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+        <div className="grid grid-cols-2 sm:flex bg-background-muted p-1 rounded-xl border border-border">
           <button
             type="button"
             onClick={() => setInputTab('upload')}
             className={cn(
-              'text-xs font-semibold px-3 py-1.5 rounded-lg transition-all',
+              'text-xs font-semibold px-3 py-2 sm:py-1.5 rounded-lg transition-all flex items-center justify-center gap-1.5 whitespace-nowrap',
               inputTab === 'upload'
                 ? 'bg-white text-foreground shadow-xs'
                 : 'text-foreground-secondary hover:text-foreground'
             )}
           >
-            Unggah File .txt
+            <UploadCloud className="w-3.5 h-3.5 flex-shrink-0" />
+            <span>Unggah File .txt</span>
           </button>
           <button
             type="button"
             onClick={() => setInputTab('paste')}
             className={cn(
-              'text-xs font-semibold px-3 py-1.5 rounded-lg transition-all',
+              'text-xs font-semibold px-3 py-2 sm:py-1.5 rounded-lg transition-all flex items-center justify-center gap-1.5 whitespace-nowrap',
               inputTab === 'paste'
                 ? 'bg-white text-foreground shadow-xs'
                 : 'text-foreground-secondary hover:text-foreground'
             )}
           >
-            Paste Teks Manual
+            <FileText className="w-3.5 h-3.5 flex-shrink-0" />
+            <span>Paste Teks Manual</span>
           </button>
         </div>
 
@@ -81,10 +83,10 @@ export function WhatsAppDropzone() {
         <button
           type="button"
           onClick={() => setIsGuideOpen(true)}
-          className="inline-flex items-center gap-1.5 text-xs text-foreground-secondary hover:text-foreground underline underline-offset-4"
+          className="inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs text-foreground-secondary hover:text-foreground py-1 px-1 transition-colors self-center sm:self-auto"
         >
-          <HelpCircle className="w-3.5 h-3.5 text-foreground" aria-hidden="true" />
-          <span>Cara Ekspor Chat WA?</span>
+          <HelpCircle className="w-3.5 h-3.5 text-foreground flex-shrink-0" aria-hidden="true" />
+          <span className="underline underline-offset-4 font-semibold">Cara Ekspor Chat WA?</span>
         </button>
       </div>
 
@@ -96,7 +98,7 @@ export function WhatsAppDropzone() {
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
           className={cn(
-            'border-2 border-dashed rounded-3xl p-8 sm:p-12 text-center cursor-pointer transition-all duration-200 bg-background-subtle hover:bg-white hover:border-foreground',
+            'border-2 border-dashed rounded-3xl p-6 sm:p-12 text-center cursor-pointer transition-all duration-200 bg-background-subtle hover:bg-white hover:border-foreground',
             isDragOver ? 'border-foreground bg-gray-100 scale-[0.99]' : 'border-border'
           )}
         >
@@ -108,18 +110,18 @@ export function WhatsAppDropzone() {
             className="hidden"
           />
 
-          <div className="w-16 h-16 rounded-2xl bg-white border border-border mx-auto flex items-center justify-center text-foreground mb-4 shadow-sm group-hover:scale-105 transition-transform">
-            <UploadCloud className="w-8 h-8 text-foreground" aria-hidden="true" />
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-border mx-auto flex items-center justify-center text-foreground mb-4 shadow-sm group-hover:scale-105 transition-transform">
+            <UploadCloud className="w-7 h-7 sm:w-8 sm:h-8 text-foreground" aria-hidden="true" />
           </div>
 
-          <h3 className="text-base sm:text-lg font-bold text-foreground mb-1">
+          <h3 className="text-sm sm:text-lg font-bold text-foreground mb-1">
             Tarik & Lepas File Ekspor Chat WhatsApp (.txt)
           </h3>
-          <p className="text-xs sm:text-sm text-foreground-secondary max-w-md mx-auto mb-6">
+          <p className="text-xs sm:text-sm text-foreground-secondary max-w-md mx-auto mb-5 sm:mb-6">
             Pilih file hasil <em>Export Chat (Without Media)</em> dari aplikasi WhatsApp Anda.
           </p>
 
-          <Button variant="outline" size="md" className="gap-2 pointer-events-none">
+          <Button variant="outline" size="md" className="gap-2 pointer-events-none w-full sm:w-auto justify-center">
             <FolderOpen className="w-4 h-4" aria-hidden="true" />
             <span>Pilih File dari Perangkat</span>
           </Button>
